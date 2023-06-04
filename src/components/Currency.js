@@ -2,12 +2,10 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Currency = () => {
-    //var{currency} = useContext(AppContext);
-    //const {setName} = useState('');
+
     const {dispatch} = useContext(AppContext);
 
     const changeCurrency = (currency)=>{
-        //let currency=value;
         let action = {
             type: 'CHG_CURRENCY',
             payload: currency
@@ -18,12 +16,12 @@ const Currency = () => {
         }
             
         return (
-            <div className='alert alert-primary' style={{ color: '#ffffff', backgroundColor: '#8CDFAF', accentcolor:'#8CDFAF' }}> Currency {
-          <select name="Currency" id="Currency" onChange={event=> changeCurrency(event.target.value)}>
-           <option defaultValue value="£">£ Pound</option>
-            <option value="$">$ Dollar</option>           
-            <option value="€">€ Euro</option>
-            <option value="₹">₹ Ruppee</option>
+            <div className='alert alert-secondary' style={{ height:'55px', width: '300px',  color: '#ffffff', backgroundColor: '#93e499' }}> Currency {
+          <select style={{color: '#ffffff', backgroundColor: '#93e499', borderColor:'#93e499', width: '180px', hovercolor:'white'}} name="Currency" id="Currency" onChange={event=> changeCurrency(event.target.value)}>
+           <option style={{color: '#000000', backgroundColor: '#93e499', width: '180px'}} defaultValue value="£">£ Pound</option>
+            <option style={{color: '#000000', backgroundColor: '#93e499', width: '180px'}} value="$">$ Dollar</option>           
+            <option style={{color: '#000000', backgroundColor: '#93e499', width: '180px'}} value="€">€ Euro</option>
+            <option style={{color: '#000000', backgroundColor: '#93e499', width: '180px'}} value="₹">₹ Ruppee</option>
           </select>	
           }	
         </div>
